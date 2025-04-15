@@ -1,4 +1,5 @@
 import random
+import time
 def radix_sort(arr):
     max_num = max(arr)
     exp = 1
@@ -29,12 +30,12 @@ def counting_sort(arr, exp):
     for i in range(n):
         arr[i] = output[i]
 
-random_array = [random.randint(1, 10000) for _ in range(100)]
+arr = [random.randint(1, 10000) for _ in range(10)]
+print("Неотсортированный массив (первые 10 элементов):", arr[:10])
 
-print("Неотсортированный массив:")
-print(random_array)
+start_time = time.time() * 1000
+radix_sort(arr)
+end_time = time.time() * 1000
 
-radix_sort(random_array)
-
-print("\nОтсортированный массив:")
-print(random_array)
+print("Отсортированный массив (первые 10 элементов):", arr[:10])
+print(f"Время выполнения Radix Sort: {end_time - start_time:.3f} мс")

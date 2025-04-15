@@ -1,4 +1,5 @@
 import random
+import time
 def quick_sort(arr, low, high):
     if low < high:
         pi = partition(arr, low, high)
@@ -15,12 +16,12 @@ def partition(arr, low, high):
     arr[i + 1], arr[high] = arr[high], arr[i + 1]
     return i + 1
 
-arr = [random.randint(1, 10000) for _ in range(100)]
+arr = [random.randint(1, 10000) for _ in range(1000)]
+print("\nНеотсортированный массив (первые 10 элементов):", arr[:10])
 
-print("Неотсортированный массив:")
-print(arr)
-
+start_time = time.time() * 1000
 quick_sort(arr, 0, len(arr) - 1)
+end_time = time.time() * 1000
 
-print("\nОтсортированный массив:")
-print(arr)
+print("Отсортированный массив (первые 10 элементов):", arr[:10])
+print(f"Время выполнения Quick Sort: {end_time - start_time:.3f} мс")

@@ -1,4 +1,5 @@
 import random
+import time
 def merge_sort(arr):
     if len(arr) > 1:
         mid = len(arr) // 2
@@ -28,12 +29,12 @@ def merge_sort(arr):
             j += 1
             k += 1
 
-arr = [random.randint(1, 10000) for _ in range(100)]
+arr = [random.randint(1, 10000) for _ in range(1000)]
+print("\nНеотсортированный массив (первые 10 элементов):", arr[:10])
 
-print("Неотсортированный массив:")
-print(arr)
-
+start_time = time.time() * 1000
 merge_sort(arr)
+end_time = time.time() * 1000
 
-print("\nОтсортированный массив:")
-print(arr)
+print("Отсортированный массив (первые 10 элементов):", arr[:10])
+print(f"Время выполнения Merge Sort: {end_time - start_time:.3f} мс")
