@@ -11,7 +11,7 @@ GRID_SIZE = 30
 CELL_SIZE = 20
 WINDOW_SIZE = GRID_SIZE * CELL_SIZE
 WIN = pygame.display.set_mode((WINDOW_SIZE, WINDOW_SIZE))
-pygame.display.set_caption("A* with Weighted Map")
+pygame.display.set_caption("A*")
 
 # Цвета
 WHITE = (255, 255, 255)
