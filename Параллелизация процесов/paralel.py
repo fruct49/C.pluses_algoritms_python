@@ -111,7 +111,7 @@ def main():
     df.to_csv("results.csv", index=False)
     print("Results saved to results.csv")
 
-    # График времени выполнения
+    # График отслеживание зон C++ времени выполнения
     plt.figure(figsize=(10, 6))
     plt.plot(df["Array Size"], df["Sequential (s)"], label="Sequential", marker="o")
     for num_threads in threads:
@@ -125,7 +125,7 @@ def main():
     plt.savefig("quicksort_performance.png")
     plt.close()
 
-    # График коэффициентов ускорения
+    # График отслеживание зон C++ коэффициентов ускорения
     plt.figure(figsize=(10, 6))
     for num_threads in threads:
         plt.plot(df["Array Size"], df[f"Speedup ({num_threads} processes)"], label=f"{num_threads} Processes",
